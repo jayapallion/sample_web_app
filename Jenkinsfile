@@ -1,7 +1,7 @@
 pipeline{
  agent "any"
  stages{
-  stage (hi jayapal) {
+  stage ("hi jayapal") {
    steps{
     sh ehco "hi jayapal"
    }
