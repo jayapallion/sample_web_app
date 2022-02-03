@@ -25,7 +25,7 @@ pipeline{
         stage('deploy to container'){
             steps{
                 script{
-                    docker build . -t jayapallion\completeci-cd:Docker_tag
+                    docker build -t jayapallion\completeci-cd:Docker_tag .
                     withCredentials([string(credentialsId: 'Docker_password', variable: 'Docker_password')])
                     docker login -u jayapallion -p $Docker_password
                     docker push jayapallion\completeci-cd:Docker_tag
