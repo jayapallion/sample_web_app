@@ -3,12 +3,7 @@ def getDockerTag() {
     return tag
 }
 pipeline{
-    agent {
-        docker {
-            image 'maven'
-            args '-v $HOME/.m2:/root/.m2'
-        }
-    }
+    agent any
     environment{
         Dokcer_tag = getDockerTag()
     }
@@ -16,6 +11,12 @@ pipeline{
     stages{
 
         stage('build'){
+            agent {
+               docker {
+                 image 'maven'
+                 args '-v $HOME/.m2:/root/.m2'
+               }
+           }
             steps{
                 script{
                     sh "mvn clean install"
