@@ -5,7 +5,7 @@ def getDockerTag() {
 pipeline{
     agent any
     environment{
-        Dokcer_tag = getDockerTag()
+        Docker_tag = getDockerTag()
     }
 
     stages{
@@ -27,10 +27,10 @@ pipeline{
             steps{
                 script{
                    
-                    sh "docker build -t jayapallion/completeci-cd:1.0 ."
+                    sh "docker build -t jayapallion/completeci-cd:$Docker_tag ."
                     withCredentials([string(credentialsId: 'Docker_password', variable: 'Docker_password')]){
                     sh "docker login -u jayapallion -p $Docker_password"
-                    sh "docker push jayapallion/completeci-cd:1.0" 
+                    sh "docker push jayapallion/completeci-cd:Docker_tag" 
                     }
                 }
             }
