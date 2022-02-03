@@ -13,7 +13,7 @@ pipeline{
         stage('build'){
             agent {
                docker {
-                 image 'maven'
+                 image 'maven:3-openjdk-11'
                }
            }
             steps{
