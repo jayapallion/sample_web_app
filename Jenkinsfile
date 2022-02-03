@@ -13,7 +13,8 @@ pipeline{
         stage('build'){
             agent {
                docker {
-                 image 'maven:3-openjdk-11'
+                 image 'maven'
+                 args '-v $HOME/.m2:/root/.m2'
                }
            }
             steps{
@@ -25,6 +26,7 @@ pipeline{
         stage('deploy to container'){
             steps{
                 script{
+                    sh "cp -r ../'first jenkins project@2'/target ."
                     sh "docker build -t jayapallion/completeci-cd:$Docker_tag ."
                     withCredentials([string(credentialsId: 'Docker_password', variable: 'Docker_password')]){
                     sh "docker login -u jayapallion -p $Docker_password"
