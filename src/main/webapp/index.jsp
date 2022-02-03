@@ -76,11 +76,11 @@
             <p>Maven is a build automation tool used primarily for Java projects. Maven can also be used to build and manage projects written in C#, Ruby, Scala, and other languages.</p>
             <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
-        <div class="col-md-4">
+<!--         <div class="col-md-4">
             <h2>Docker</h2>
             <p>Docker is a set of platform as a service products that uses OS-level virtualization to deliver software in packages called containers. Containers are isolated from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels</p>
             <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
+        </div> -->
     </div>
 
     <hr>
@@ -89,6 +89,7 @@
         <p>&copy; Company 2014</p>
     </footer>
 </div> <!-- /container -->
+
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
@@ -99,4 +100,5 @@
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 </body>
 </html>
-#
+
+
