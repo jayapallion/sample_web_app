@@ -1,0 +1,20 @@
+name: CI
+on:
+  push:
+    branches: [ master ]
+jobs:
+  codecommit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: pushes to codecommit
+        env:
+          CODECOMMIT_URL: ${{ secrets.CODECOMMIT_URL }}
+          HOST_KEY: ${{ secrets.HOST_KEY }}
+          SSH_CONFIG: ${{ secrets.SSH_CONFIG }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        shell: bash
+        run: |
+          mkdir .ssh && cd .ssh && echo "$SSH_PRIVATE_KEY" > id_rsa && chmod 600 id_rsa
+          echo "$SSH_CONFIG" > config && chmod 600 config
+          git clone ssh://git-codecommit.ap-south-1.amazonaws.com/v1/repos/testing
