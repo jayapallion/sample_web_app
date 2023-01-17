@@ -5,10 +5,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: pushes to codecommit
+      - name: checkout from codecommit
         env:
           USERNAME: ${{ secrets.AWS_USERNAME }}
           PASSWORD: ${{ secrets.AWS_PASSWORD }}
         shell: bash
         run: |
           git clone ssh://${{ vars.USERNAME }}:${{ vars.PASSWORD }}@git-codecommit.ap-south-1.amazonaws.com/v1/repos/testing
+        with:
+          path: ./
+          ref: main
