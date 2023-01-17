@@ -7,13 +7,8 @@ jobs:
       - uses: actions/checkout@v3
       - name: pushes to codecommit
         env:
-          CODECOMMIT_URL: ${{ secrets.CODECOMMIT_URL }}
-          HOST_KEY: ${{ secrets.HOST_KEY }}
-          SSH_CONFIG: ${{ secrets.SSH_CONFIG }}
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          USERNAME: ${{ secrets.AWS_USERNAME }}
+          PASSWORD: ${{ secrets.AWS_PASSWORD }}
         shell: bash
         run: |
-          mkdir .ssh && cd .ssh && echo "$SSH_PRIVATE_KEY" > id_rsa && chmod 600 id_rsa
-          echo "$SSH_CONFIG" > config && chmod 600 config
-          echo "$HOST_KEY" > known_hosts && chmod 600 known_hosts && cd ..
-          git clone ssh://git-codecommit.ap-south-1.amazonaws.com/v1/repos/testing
+          git clone ssh://$USERNAME:$PASSWORD@git-codecommit.ap-south-1.amazonaws.com/v1/repos/testing
