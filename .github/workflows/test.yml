@@ -13,5 +13,5 @@ jobs:
         run: |
           git clone ssh://${{ vars.USERNAME }}:${{ vars.PASSWORD }}@git-codecommit.ap-south-1.amazonaws.com/v1/repos/testing
         with:
-          path: ./
+          path: main
           ref: main
