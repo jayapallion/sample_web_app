@@ -97,5 +97,5 @@ jobs:
           IMAGE_TAG: 1.0.0
         run: |
           cd ..
-          docker build --build-arg folder=testing -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+          docker build --build-arg folder=billing -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG  
