@@ -1,3 +1,4 @@
 FROM ubuntu
 WORKDIR /jay
-COPY ../testing/ /jay
+ARG folder
+COPY ../$folder/ /jay
