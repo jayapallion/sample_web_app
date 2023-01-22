@@ -6,7 +6,7 @@ jobs:
     environment: dev
     steps:
       - uses: actions/checkout@v3
-      - name: checkout from codecommit
+        name: checkout from codecommit
 #         env:
 #           USERNAME: ${{ secrets.AWS_USERNAME }}
 #           PASSWORD: ${{ secrets.AWS_PASSWORD }}
@@ -16,3 +16,6 @@ jobs:
 #         with:
 #           path: main
 #           ref: main
+      - uses: actions/checkout@v3
+        name: checkout this repo
+        
