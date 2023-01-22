@@ -38,5 +38,5 @@ jobs:
           build-args: |
             folder=testing
           push: true
-          tags: jayapallion/app:latest
+          tags: user/app:latest
         
