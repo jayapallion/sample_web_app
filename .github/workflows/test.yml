@@ -18,6 +18,9 @@ jobs:
 #           ref: main
       - uses: actions/checkout@v3
         name: checkout this repo
+        with:
+          path: main
+          ref: main
         
       -
         name: Checkout
