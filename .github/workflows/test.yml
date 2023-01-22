@@ -19,9 +19,6 @@ jobs:
           git clone "https://${{ secrets.AWS_USERNAME }}:${{ secrets.AWS_PASSWORD }}@git-codecommit.ap-south-1.amazonaws.com/v1/repos/testing" testing
           
       -
-        name: Checkout
-        uses: actions/checkout@v3
-      -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       -
