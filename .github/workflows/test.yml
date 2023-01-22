@@ -35,6 +35,8 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
+          build-args: |
+            folder=testing
           push: true
           tags: jayapallion/app:latest
         
