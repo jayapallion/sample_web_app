@@ -36,5 +36,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: user/app:latest
+          tags: jayapallion/app:latest
         
