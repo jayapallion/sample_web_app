@@ -5,23 +5,19 @@ jobs:
     runs-on: ubuntu-latest
     environment: dev
     steps:
-      - uses: actions/checkout@v3
-      - name: checkout from codecommit
-#         env:
-#           USERNAME: ${{ secrets.AWS_USERNAME }}
-#           PASSWORD: ${{ secrets.AWS_PASSWORD }}
-        shell: bash
-        run: |
-          git clone "https://${{ secrets.AWS_USERNAME }}:${{ secrets.AWS_PASSWORD }}@git-codecommit.ap-south-1.amazonaws.com/v1/repos/testing" testing 
-#         with:
-#           path: main
-#           ref: main
+       
       - uses: actions/checkout@v3
         name: checkout this repo
         with:
           path: main
           ref: main
-        
+      
+      - uses: actions/checkout@v3
+      - name: checkout from codecommit
+        shell: bash
+        run: |
+          git clone "https://${{ secrets.AWS_USERNAME }}:${{ secrets.AWS_PASSWORD }}@git-codecommit.ap-south-1.amazonaws.com/v1/repos/testing" testing
+          
       -
         name: Checkout
         uses: actions/checkout@v3
