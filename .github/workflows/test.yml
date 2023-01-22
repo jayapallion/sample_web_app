@@ -1,7 +1,14 @@
 name: CI
-on: [workflow_dispatch]
+on: 
+  workflow_dispatch:
+    inputs:
+      job-name:
+        description: 'Job id'
+        required: true
 jobs:
   codecommit:
+    name: codecommit
+    if: ${{ github.event.inputs.job-name == 'codecommit' }}
     runs-on: ubuntu-latest
     environment: dev
     steps:
@@ -62,6 +69,8 @@ jobs:
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           
   billing:
+    name: billing
+    if: ${{ github.event.inputs.job-name == 'billing' }}
     runs-on: ubuntu-latest
     environment: dev
     steps:
