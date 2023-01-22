@@ -96,6 +96,6 @@ jobs:
           ECR_REPOSITORY: billing
           IMAGE_TAG: 1.0.0
         run: |
-          cd ..
+          #cd ..
           docker build --build-arg folder=billing -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG  
