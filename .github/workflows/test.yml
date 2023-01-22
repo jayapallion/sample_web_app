@@ -6,12 +6,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: checkout from codecommit
-#         env:
+        env:
+          ENV_VARIABLE: dev
 #           USERNAME: ${{ secrets.AWS_USERNAME }}
 #           PASSWORD: ${{ secrets.AWS_PASSWORD }}
         shell: bash
         run: |
-          git clone "https://${{ secrets.USERNAME }}:${{ secrets.PASSWORD }}@git-codecommit.ap-south-1.amazonaws.com/v1/repos/testing" 
+          git clone "https://${{ secrets.AWS_USERNAME }}:${{ secrets.AWS_PASSWORD }}@git-codecommit.ap-south-1.amazonaws.com/v1/repos/testing" 
 #         with:
 #           path: main
 #           ref: main
