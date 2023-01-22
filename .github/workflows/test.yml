@@ -11,7 +11,11 @@ jobs:
 #           PASSWORD: ${{ secrets.AWS_PASSWORD }}
         shell: bash
         run: |
-          git clone "https://${{ vars.AWS_USERNAME }}:${{ vars.AWS_PASSWORD }}@git-codecommit.ap-south-1.amazonaws.com/v1/repos/testing" 
+          echo "$USERNAME"
+          echo "$PASSWORD"
+          echo "${{ vars.AWS_USERNAME }}"
+          echo "${{ vars.AWS_PASSWORD }}"
+#          git clone "https://${{ vars.AWS_USERNAME }}:${{ vars.AWS_PASSWORD }}@git-codecommit.ap-south-1.amazonaws.com/v1/repos/testing" 
 #         with:
 #           path: main
 #           ref: main
