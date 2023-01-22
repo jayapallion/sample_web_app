@@ -1,3 +1,3 @@
 FROM ubuntu
 WORKDIR /jay
-COPY ./testing/ /jay
+COPY ../testing/ /jay
