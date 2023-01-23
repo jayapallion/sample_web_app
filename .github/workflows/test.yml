@@ -5,6 +5,7 @@ on:
       job-name:
         description: 'Job id'
         required: true
+        type: choice
 jobs:
   codecommit:
     name: codecommit
