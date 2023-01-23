@@ -6,6 +6,9 @@ on:
         description: 'Job id'
         required: true
         type: choice
+        options:
+          - codecommit
+          - billing
 jobs:
   codecommit:
     name: codecommit
