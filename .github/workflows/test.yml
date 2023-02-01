@@ -5,7 +5,7 @@ on:
       job-name:
         description: 'Job id'
         required: true
-        type: choice
+        type: select
         options:
           - codecommit
           - billing
